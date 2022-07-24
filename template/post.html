@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+
+{%block title%} POSTS {%endblock%}
+
+
+{%block content%}
+<div class="container-custom">
+    <div class="row">
+        <div class="col s12 m10">
+            <h3></h3>
+
+            <br>
+            <br>
+            <!-- Design -->
+            <div class="container">
+	            <h1 style="text-align: center;">{{post.title}}</h1>
+                <div align="left">
+                    <div class="fb-like" data-href="http://127.0.0.1:8000/bLOG/{{post.Url}}" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+                </div>
+            </div>
+<!--            <div class="fb-like" data-href="http://127.0.0.1:8000/bLOG/{{post.Url}}" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>-->
+            <img style="height:40%;width:93%;margin:45px;" src="/media/{{post.image}}" class="responsive-img"  alt="">
+            <br>
+            <div class="container">
+                <p>
+                {{post.content | safe}}
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  <div class="fb-comments" data-href="http://127.0.0.1:8000/bLOG/{{post.Url}}" data-width="" data-numposts="5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+{%endblock%}
+

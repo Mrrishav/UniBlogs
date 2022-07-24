@@ -1,0 +1,61 @@
+{%extends 'base.html' %}
+{%block title%} Welcome Uni_Blogs {%endblock%}
+{%block content%}
+<br>
+<br>
+<br>
+<!--<h1 style="text-align:center;" class="mt"><b>Uni Blog</b></h1>-->
+<div class="container" style="margin-top 200px;">
+<div class="cont">
+	<h1><span> Uni<br>Blogs</span></h1>
+	<div class="blobs_1"></div>
+	<div class="blobs_2"></div>
+	<div class="blobs_3"></div>
+	<div class="blobs_4"></div>
+	<div class="blobs_5"></div>
+	<div class="blobs_6"></div>
+	<div class="blobs_7"></div>
+    <p style="text-align:center;">Stories from the community powering the internet</p>
+</div>
+  </div>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="row gy-2">
+        {% for p in posts %}
+        <div class="col-lg-3 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/media/{{p.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.title}}</h5>
+                     <p class="card-text">{{p.content|truncatewords:20|safe}}</p>
+                     <a href="/bLOG/{{p.url}}" class="btn btn text-secondary">Read More...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<hr style="width:72%;text-align:center;margin-left:244px">
+
+
+<!--About section-->
+
+<div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light centre">About Us</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Contact Us</a>
+          <a href="#" class="btn btn-secondary my-2">Join US</a>
+        </p>
+      </div>
+</div>
+
+<hr>
+{% endblock %}

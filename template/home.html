@@ -1,0 +1,71 @@
+{%extends 'base.html' %}
+
+{%block title%} Welcome Bloggers {%endblock%}
+
+
+{%block content%}
+<div class ="container">
+    <div class ="row">
+        <div class=""col s12>
+            {%for p in posts %}
+            <div class="row">
+                <div class="col s12 m8">
+                    {{p.content |truncatewords:60 |safe}}
+                    <div class = "mt20">
+                        <a class="waves-effect waves-light btn">Readore....</a>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <img src="/media/{{p.image}}" class="responsive-img" style="margin-top:50px;" alt=" ">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{%endblock%}
+
+
+
+<!-- <div class="coll">-->
+<!--      <div class="card mb-3">-->
+<!--        <img src="/media/{{p.image}}" class="card-img-top" alt="...">-->
+<!--         <div class="card-body">-->
+<!--             <h5 class="card-title">{{p.title}}</h5>-->
+<!--             <p class="card-text">{{p.content|truncatewords:30|safe}}</p>-->
+<!--           <div class = "mt20">-->
+<!--              <a href="/bLOG/{{p.url}}" class="waves-effect waves-light btn" >Readore....</a>-->
+<!--&lt;!&ndash;             print("/bLOG/{{p.Url}}")&ndash;&gt;-->
+<!--           </div>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--   </div>-->
+<!--  </div>-->
+<!--<div class="con">-->
+<!--    <div class="roww" >-->
+<!--    {%for p in posts %}-->
+<!--     <div class="container">-->
+<!--        <div class="card mb-3">-->
+<!--  <img class="card-img-top" src="/media/{{p.image}}" alt="Card image cap">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">{{p.title}}</h5>-->
+<!--    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--  </div>-->
+<!--</div>-->
+<!--     </div>-->
+<!--    {%endfor%}-->
+<!--    <div>-->
+<!--</div>-->
+<!--About us --->
+<!--<div class="row py-lg-5">-->
+<!--      <div class="col-lg-6 col-md-8 mx-auto">-->
+<!--        <h1 class="fw-light centre">Album example</h1>-->
+<!--        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>-->
+<!--        <p>-->
+<!--          <a href="#" class="btn btn-primary my-2">Main call to action</a>-->
+<!--          <a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+<!--        </p>-->
+<!--      </div>-->
+<!--</div>-->
